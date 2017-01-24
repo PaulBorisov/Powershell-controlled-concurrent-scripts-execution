@@ -25,3 +25,5 @@ It supports two states. $true means execute interactively with visible Powershel
 [bool]$keepOpen, boolean, used to control execution termination behavior of concurrent scripts if the interactive mode is turned on. This parameter is ignored if $interactive = $false.
 It supports two states. $true means close the window of concurrent Powershell script on its termination. $false means keep the window of a terminated concurrent Powershell script open after its completion.
   Default value: [bool]$keepOpen = $false
+
+In case if $keepOpen = $true, the solution employs additional service scripts z_stub.ps1 and z_pause.ps1 to provide the correct closure behavior.

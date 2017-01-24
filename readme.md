@@ -13,17 +13,17 @@ How to use this solution
 Parameters
 ----------
 [string]$PSScriptRoot, string, used to provide seamless compatibility between various Powershell versions
-  Default value: [string]$PSScriptRoot = (Split-Path -Parent -Path $MyInvocation.MyCommand.Definition)
+- Default value: [string]$PSScriptRoot = (Split-Path -Parent -Path $MyInvocation.MyCommand.Definition)
 
 [string[]]$scriptsToExecute, array of strings, strings inside define paths to all scripts in your package
-  Default value: [string[]]$scriptsToExecute = @("$PSScriptRoot\first.ps1", "$PSScriptRoot\second.ps1", "$PSScriptRoot\third.ps1")
+- Default value: [string[]]$scriptsToExecute = @("$PSScriptRoot\first.ps1", "$PSScriptRoot\second.ps1", "$PSScriptRoot\third.ps1")
 
 [bool]$interactive, boolean, used to control execution behavior of concurrent scripts. 
 It supports two states. $true means execute interactively with visible Powershell window while $false implies hidden Powershell session.
-  Default value: [bool]$interactive = $true
+- Default value: [bool]$interactive = $true
 
 [bool]$keepOpen, boolean, used to control execution termination behavior of concurrent scripts if the interactive mode is turned on. This parameter is ignored if $interactive = $false.
 It supports two states. $true means close the window of concurrent Powershell script on its termination. $false means keep the window of a terminated concurrent Powershell script open after its completion.
-  Default value: [bool]$keepOpen = $false
+- Default value: [bool]$keepOpen = $false
 
 In case if $keepOpen = $true, the solution employs additional service scripts z_stub.ps1 and z_pause.ps1 to provide the correct closure behavior.
